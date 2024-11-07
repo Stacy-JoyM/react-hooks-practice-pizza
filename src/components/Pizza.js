@@ -1,17 +1,21 @@
 import React from "react";
 
-function Pizza() {
+function Pizza({pizza, removePizza}) {
+  console.log(pizza)
   return (
+    <>
     <tr>
-      <td>{"Replace Me With Pizza Topping"}</td>
-      <td>{"Replace Me With Pizza Size"}</td>
-      <td>{"Replace Me With Vegatarian"}</td>
-      <td>
-        <button type="button" className="btn btn-primary">
-          Edit Pizza
-        </button>
-      </td>
+        <td>{pizza.topping}</td>
+        <td>{pizza.size}</td>
+        <td>{pizza.vegetarian ===true ? "Vegetarian" : "Not Vegetarian"}</td>
+        <td>{pizza.edit}</td>
+        <td>
+          <button type="button" className="btn btn-danger" onClick={()=> removePizza(pizza.id)}>
+            Delete Pizza
+          </button>
+        </td>
     </tr>
+    </>
   );
 }
 
